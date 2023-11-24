@@ -45,13 +45,10 @@ def parse_oval(file_path):
                 'criteria': criteria_list
             })
 
-        simplified_json = json.dumps(simplified_data, indent=4)
-        print(simplified_json)
-
+        simplified_json = json.dumps(simplified_data)
         return simplified_data
 
     except Exception as e:
-        print(f"Ошибка при обработке файла: {e}")
         return None
 
 def extract_criteria(criteria_element):
@@ -75,7 +72,6 @@ def extract_criteria(criteria_element):
         criteria_data['criteria'] = criteria_list
 
     return criteria_data
-
 
 file_path = 'тест на 3 уязвимости.oval.xml'
 parse_oval(file_path)
